@@ -1,6 +1,7 @@
-from configuration import BASE_URL
 import pytest
 import requests
+from configuration import BASE_URL
+
 
 @pytest.fixture
 def user_data():
@@ -15,8 +16,8 @@ def user_data():
         "userStatus": 1
     }
 
-
-def test_create_user(user_data):
-    url = f'{BASE_URL}/user'
-    response = requests.post(url, json=user_data)
+def test_login_user(user_data):
+    url = f'{BASE_URL}/user/login'
+    response = requests.get(url, params={'username': user_data['username'], 'password': user_data['password']})
     assert response.status_code == 200
+    assert 'logged in user session' in response.text

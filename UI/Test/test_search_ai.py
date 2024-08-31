@@ -16,6 +16,6 @@ def test_search_ai(driver):
     find_button = driver.find_element(By.CSS_SELECTOR, ".custom-button")
     find_button.click()
 
-    result_items = driver.find_elements(By.CSS_SELECTOR, ".search-results__item")
+    result_items = WebDriverWait(driver, 10).until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, '.search-results__item')))
 
     assert len(result_items) > 0

@@ -6,9 +6,10 @@ import tempfile
 URL = "https://www.epam.com/"
 URL_CONTACT_US = "https://www.epam.com/about/who-we-are/contact"
 URL_ABOUT = "https://www.epam.com/about"
+BASE_URL = "https://petstore.swagger.io/v2"
 
 
-@pytest.fixture(params=["chrome"], scope="function")
+@pytest.fixture(params=["chrome", "firefox"], scope="function")
 def driver(request):
     height = 1080
     width = 1920
