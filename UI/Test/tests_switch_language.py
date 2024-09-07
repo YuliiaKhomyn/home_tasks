@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from configuration import URL
-from configuration import driver
+
+from UI.Test.conftest import URL
+from UI.Test.conftest import driver
 
 
 def test_open_epam_and_check_element(driver):

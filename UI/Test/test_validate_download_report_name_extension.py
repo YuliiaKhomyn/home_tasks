@@ -5,8 +5,8 @@ import tempfile
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from configuration import URL_ABOUT
-from configuration import driver
+from UI.Test.conftest import URL_ABOUT
+from UI.Test.conftest import driver
 
 
 def test_validate_download_report_name_extension(driver):

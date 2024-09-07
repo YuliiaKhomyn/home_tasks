@@ -1,6 +1,7 @@
-from configuration import URL
-from configuration import driver
 from selenium.webdriver.common.by import By
+
+from UI.Test.conftest import URL
+from UI.Test.conftest import driver
 
 
 def test_verify_policies_list(driver):

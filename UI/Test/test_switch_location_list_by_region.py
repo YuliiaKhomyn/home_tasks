@@ -1,7 +1,7 @@
-from configuration import driver
-from configuration import URL
 from selenium.webdriver.common.by import By
 
+from UI.Test.conftest import URL
+from UI.Test.conftest import driver
 
 
 def test_exist_location_list_by_region(driver):

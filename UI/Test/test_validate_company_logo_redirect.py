@@ -1,12 +1,13 @@
-from configuration import driver
-from configuration import URL_ABOUT
-from configuration import URL
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from UI.Test.conftest import URL
+from UI.Test.conftest import URL_ABOUT
+from UI.Test.conftest import driver
 
-def test_validate_company_logo_redirect (driver):
+
+def test_validate_company_logo_redirect(driver):
     driver.get(URL_ABOUT)
 
     expected_link = URL
@@ -17,4 +18,3 @@ def test_validate_company_logo_redirect (driver):
     current_url_after_redirect = driver.current_url
 
     assert current_url_after_redirect == expected_link
-

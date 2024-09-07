@@ -1,7 +1,8 @@
-import pytest
-from selenium import webdriver
 import os
 import tempfile
+
+import pytest
+from selenium import webdriver
 
 URL = "https://www.epam.com/"
 URL_CONTACT_US = "https://www.epam.com/about/who-we-are/contact"

@@ -1,5 +1,5 @@
 import requests
-from configuration import BASE_URL
+from UI.Test.conftest import BASE_URL
 
 def test_logout_user():
     logout_url = f'{BASE_URL}/user/logout'

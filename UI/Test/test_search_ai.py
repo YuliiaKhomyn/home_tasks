@@ -1,8 +1,9 @@
-from configuration import driver
-from configuration import URL
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+
+from UI.Test.conftest import URL
+from UI.Test.conftest import driver
 
 
 def test_search_ai(driver):

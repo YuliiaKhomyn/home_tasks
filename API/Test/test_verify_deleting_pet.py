@@ -1,29 +1,11 @@
 import pytest
 import requests
-from configuration import BASE_URL
 
-@pytest.fixture
-def pet_data():
-    return {
-        "id": 1,
-        "category": {
-            "id": 0,
-            "name": "Dogs"
-        },
-        "name": "Buddy",
-        "photoUrls": [
-            "http://example.com/photo.jpg"
-        ],
-        "tags": [
-            {
-                "id": 1,
-                "name": "friendly"
-            }
-        ],
-        "status": "available"
-    }
+from API.Test.constants import PET_DOG
+from UI.Test.conftest import BASE_URL
 
 
+@pytest.mark.parametrize("pet_data", [PET_DOG])
 def test_delete_pet(pet_data):
     url = f'{BASE_URL}/pet'
     response = requests.post(url, json=pet_data)

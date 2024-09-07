@@ -1,21 +1,11 @@
 import pytest
 import requests
-from configuration import BASE_URL
+
+from API.Test.constants import USER_DATA_1
+from UI.Test.conftest import BASE_URL
 
 
-@pytest.fixture
-def user_data():
-    return {
-        "id": 1,
-        "username": "testuser123",
-        "firstName": "John",
-        "lastName": "Doe",
-        "email": "john.doe@example.com",
-        "password": "password123",
-        "phone": "1234567890",
-        "userStatus": 1
-    }
-
+@pytest.mark.parametrize("user_data", [USER_DATA_1])
 def test_login_user(user_data):
     url = f'{BASE_URL}/user/login'
     response = requests.get(url, params={'username': user_data['username'], 'password': user_data['password']})

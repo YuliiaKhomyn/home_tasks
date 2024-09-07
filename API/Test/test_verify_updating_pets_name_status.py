@@ -1,5 +1,5 @@
 import requests
-from configuration import BASE_URL
+from UI.Test.conftest import BASE_URL
 
 def test_update_pet_name_status():
     url = f'{BASE_URL}/pet'
