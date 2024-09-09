@@ -10,10 +10,8 @@ def test_add_pet(pet_data):
     url = f'{BASE_URL}/pet'
     response = requests.post(url, json=pet_data)
 
-    # Check the response status code
     assert response.status_code == 200
 
-    # Verify that the pet was added successfully
     response_data = response.json()
     assert response_data['name'] == pet_data['name'], f"Expected name '{pet_data['name']}' but got '{response_data['name']}'"
     assert response_data['category'] == pet_data['category'], f"Expected category '{pet_data['category']}' but got '{response_data['category']}'"
